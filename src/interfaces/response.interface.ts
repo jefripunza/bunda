@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-import { StatusCodes } from "../deps";
+import { StatusCodes } from "../../server/deps";
 
 interface IResponse {
   statusCode: StatusCodes;

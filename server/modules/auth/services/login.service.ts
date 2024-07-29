@@ -2,14 +2,17 @@ import { StatusCodes } from "../../../deps";
 import {
   ServiceRequest,
   ServiceResponse,
-} from "../../../interfaces/server.interface";
+} from "../../../../src/interfaces/server.interface";
 import * as dto from "../interfaces/login.interface";
 
 const LoginService = async (
   req: ServiceRequest<dto.Ibody>
 ): Promise<ServiceResponse<dto.IResponse>> => {
-  const { username, password } = req.body;
   try {
+    const { username, password } = req.body;
+
+    const message_wrong_login = "username or password wrong";
+
     return {
       statusCode: StatusCodes.OK,
       message: "login successfuly",

@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-import { Request, Response, StatusCodes } from "../deps";
+import { jwt, Request, Response, StatusCodes } from "../../server/deps";
 
-export interface User {
+export interface User extends jwt.JwtPayload {
   id: string;
   username: string;
   role: string;
@@ -10,8 +10,8 @@ export interface User {
 }
 
 export interface ServiceRequest<Body> extends Request {
-  token: string;
-  user: User;
+  token?: string;
+  user?: User;
   body: Body;
 }
 export interface ServiceResponse<Data> {
