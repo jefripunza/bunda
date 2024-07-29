@@ -1,0 +1,1 @@
+bun build --compile --minify --sourcemap ./server.ts --outfile app
