@@ -27,4 +27,4 @@ dev-dist
 # Environment
 .env
 
-./test.ts
+test.ts
