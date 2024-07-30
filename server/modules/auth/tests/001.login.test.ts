@@ -100,15 +100,45 @@ describe("(Positive) Login", () => {
 });
 
 describe("(Negative) Login", () => {
-  test("wrong username ...", async () => {
-    //
+  test("wrong username / user not register ...", async () => {
+    await supertest(app)
+      .post("/api/auth/login")
+      .send({
+        _encrypt_: encryptAES(
+          JSON.stringify({
+            username: "c_user.username",
+            password: c_user.password,
+          }),
+          "foo#bar"
+        ),
+      })
+      .set({ origin: "foo", "x-browser-id": "bar" }) // wajib
+      .then((response) => {
+        const _encrypt_ = response.body?._encrypt_;
+        const result = JSON.parse(decryptAES(_encrypt_, "foo#bar"));
+        expect(result?.message).toBe("username or password wrong");
+        expect(result?.statusCode).toBe(StatusCodes.BAD_REQUEST);
+      });
   });
 
   test("wrong password ...", async () => {
-    //
-  });
-
-  test("user not register ...", async () => {
-    //
+    await supertest(app)
+      .post("/api/auth/login")
+      .send({
+        _encrypt_: encryptAES(
+          JSON.stringify({
+            username: c_user.username,
+            password: "c_user.password",
+          }),
+          "foo#bar"
+        ),
+      })
+      .set({ origin: "foo", "x-browser-id": "bar" }) // wajib
+      .then((response) => {
+        const _encrypt_ = response.body?._encrypt_;
+        const result = JSON.parse(decryptAES(_encrypt_, "foo#bar"));
+        expect(result?.message).toBe("username or password wrong");
+        expect(result?.statusCode).toBe(StatusCodes.BAD_REQUEST);
+      });
   });
 });

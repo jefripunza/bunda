@@ -12,8 +12,7 @@ import {
 } from "./deps";
 import assets from "../assets";
 
-import AuthModule from "./modules/auth";
-// import UserModule from "./modules/user";
+import Modules from "./modules";
 
 const app: Express = express();
 
@@ -54,9 +53,13 @@ app.all("*", async (req: Request, res: Response, next: NextFunction) => {
   return res.send(buffer);
 });
 
-// Routes
-app.use(AuthModule);
-// app.use(UserModule);
+// Modules
+app.use(Modules);
+app.get("/api", (_req: Request, res: Response) => {
+  return res.json({
+    message: "Hello World !!!",
+  });
+});
 
 // Error Handling
 app.get("*", (_req: Request, res: Response) => {

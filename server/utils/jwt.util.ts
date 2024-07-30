@@ -43,15 +43,10 @@ export const jwtGenerate = async (payloads = {}, options: JWTOptions = {}) => {
   };
 };
 
-export const jwtVerify = (authorization: string): User | boolean => {
+export const jwtVerify = (authorization: string): User => {
   const token = String(authorization).replace("Bearer ", "");
   const privateKey = md5(SECRET_KEY);
-  try {
-    return jwt.verify(token, privateKey, {
-      algorithms: [use_algorithm],
-    }) as User;
-  } catch (error) {
-    console.log({ error });
-    return false;
-  }
+  return jwt.verify(token, privateKey, {
+    algorithms: [use_algorithm],
+  }) as User;
 };

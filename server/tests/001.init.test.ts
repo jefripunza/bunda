@@ -1,6 +1,6 @@
 // @ts-ignore
 import { test, expect, describe } from "bun:test";
-import { mongodb, mongoUnit, supertest } from "../deps";
+import { mongodb, mongoUnit, StatusCodes, supertest } from "../deps";
 import app from "../app";
 import { a_user, c_user, sa_user } from "../consts";
 import { useMongoDB } from "../database";
@@ -47,9 +47,9 @@ describe("INIT", () => {
 
   test("supertest", async () => {
     await supertest(app)
-      .get("/")
+      .get("/api")
       .expect("Content-Type", /json/)
-      .expect(200)
+      .expect(StatusCodes.OK)
       .then((response) => {
         expect(response.body.message).toEqual("Hello World !!!");
       });

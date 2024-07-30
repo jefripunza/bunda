@@ -27,7 +27,9 @@ const use_token = async (
   try {
     req["user"] = (await jwtVerify(req["token"])) as User;
   } catch (error) {
-    return res.status(StatusCodes.UNAUTHORIZED).send(error.message);
+    return res.status(StatusCodes.UNAUTHORIZED).encrypt({
+      message: error.message,
+    });
   }
 
   return next();
