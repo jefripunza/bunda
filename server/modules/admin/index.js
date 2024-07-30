@@ -8,4 +8,11 @@ import UseToken from "../../middlewares/use_token.middleware";
 
 const router = express.Router();
 
+// list all user
+// create user without registration
+// update user
+// block user
+
+// change margin price
+
 export default router;

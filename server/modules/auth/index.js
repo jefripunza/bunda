@@ -19,5 +19,6 @@ router.get(
   UseToken,
   TokenValidation
 );
+// logout
 
 export default router;

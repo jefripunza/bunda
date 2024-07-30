@@ -8,4 +8,7 @@ import UseToken from "../../middlewares/use_token.middleware";
 
 const router = express.Router();
 
+// random product
+// banner slideshow
+
 export default router;

@@ -8,4 +8,8 @@ import UseToken from "../../middlewares/use_token.middleware";
 
 const router = express.Router();
 
+// get all chat history
+// delete message
+// upload image or file to chat
+
 export default router;

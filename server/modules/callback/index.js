@@ -8,4 +8,6 @@ import UseToken from "../../middlewares/use_token.middleware";
 
 const router = express.Router();
 
+// payment gateway
+
 export default router;
