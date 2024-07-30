@@ -1,6 +1,6 @@
 # BUN Digital Awesome
 
-**React + Vite + Bun + Express + TypeScript**
+**React + Vite + Bun (min 1.1.21) + Express + TypeScript**
 
 ## Table of Contents
 
@@ -32,7 +32,7 @@ To get started with BUN Digital Awesome, follow these steps:
     ```
 3. **Install dependencies:**
     ```bash
-    bun install
+    bash install.sh
     ```
 
 ## Features

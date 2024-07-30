@@ -28,3 +28,8 @@ dev-dist
 .env
 
 test.ts
+
+# compiles
+app
+app.exe
+assets.ts

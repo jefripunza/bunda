@@ -1,12 +1,13 @@
 export { default as path } from "path";
 
 // Tools
+export { default as mime } from "mime-types";
 export { default as figlet } from "figlet";
 export { default as dotenv } from "dotenv";
 export { default as md5 } from "md5";
 export { default as crypto } from "crypto";
 
-// Server
+// Servers
 export type { Request, Response, NextFunction, Express } from "express";
 export { default as express } from "express";
 export {
