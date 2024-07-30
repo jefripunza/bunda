@@ -1,5 +1,8 @@
 clear
 
+# Clone file
+cp ./.env.example .env
+
 # Installation
 yarn
 cd server
