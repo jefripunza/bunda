@@ -1,6 +1,12 @@
 // @ts-ignore
-import { expect, test } from "bun:test";
+import { test, expect, describe } from "bun:test";
 
-test("2 + 2", () => {
-  expect(2 + 2).toBe(4);
+describe("math", () => {
+  test("add", () => {
+    expect(2 + 2).toEqual(4);
+  });
+
+  test("multiply", () => {
+    expect(2 * 2).toEqual(4);
+  });
 });

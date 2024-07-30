@@ -1,0 +1,1 @@
+clear && bun test --timeout 10000
