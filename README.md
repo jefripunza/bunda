@@ -1,6 +1,6 @@
 # BUN Digital Awesome
 
-**React + Vite + Bun (min 1.1.21) + Express + TypeScript**
+**React (min 18.3.1) + Vite (min 5.2.10) + Bun (min 1.1.21) + Express (min 4.18.2) + TypeScript (min 5.0.0)**
 
 ## Table of Contents
 
